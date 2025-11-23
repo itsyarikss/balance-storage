@@ -1,0 +1,33 @@
+name: Update Balance
+
+on:
+  workflow_dispatch:
+    inputs:
+      hwid:
+        description: "HWID пользователя"
+        required: true
+      balance:
+        description: "Новый баланс"
+        required: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Update balance file
+        run: |
+          mkdir -p balances
+          FILE="balances/${{ github.event.inputs.hwid }}.json"
+          echo "{ \"balance\": ${{ github.event.inputs.balance }} }" > $FILE
+
+      - name: Commit changes
+        run: |
+          git config --global user.email "your@email"
+          git config --global user.name "GitHub Actions"
+          git add balances/*
+          git commit -m "Update balance for ${{ github.event.inputs.hwid }}" || echo "No changes"
+          git push
