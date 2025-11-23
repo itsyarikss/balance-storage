@@ -1,0 +1,50 @@
+# Binaries and build outputs
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Fody weavers (if not needed in repo)
+# Uncomment if you want to ignore
+# FodyWeavers.xml
+# FodyWeavers.xsd
+
+# App config (if sensitive)
+# App.config
+# App.exe.config
